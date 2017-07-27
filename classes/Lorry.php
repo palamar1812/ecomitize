@@ -1,20 +1,21 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: Vladimir Palamarchuk
  * Date: 27.07.2017
- * Time: 12:16
+ * Time: 13:33
  */
-namespace Classes\cars;
-use Interfaces\cars\CarsInterface;
+
+namespace Classes\lorry;
+use Interfaces\lorry\LorryInterface;
 use Interfaces\common\CommonInterface;
 use Classes\vehicle\Vehicle;
+
 /**
- * Class Cars
+ * Class Lorry
  * @package Classes\cars
  */
-class Cars extends Vehicle implements CarsInterface,CommonInterface
+class Lorry extends Vehicle implements LorryInterface,CommonInterface
 {
     public function __construct($name)
     {
@@ -25,10 +26,10 @@ class Cars extends Vehicle implements CarsInterface,CommonInterface
      * Method result_vehicle
      */
     public function result_vehicle(){
-        $this->move();
-        $this->musicOn();
-        $this->stop();
-        $this->refuel('gas');
+        echo $this->move();
+        echo $this->emptyLoads('200 kilometers');
+        echo $this->stop();
+        echo $this->refuel('diesel fuel');
     }
 
     /**
@@ -41,11 +42,12 @@ class Cars extends Vehicle implements CarsInterface,CommonInterface
     }
 
     /**
-     * Method musicOn
+     * Method emptyLoads
+     * @param string $object
      * @return string
      */
-    public function musicOn()
+    public function emptyLoads($object)
     {
-        return $this->name . ' music switched on';
+        return $this->name . ' refuel' . $object;
     }
 }

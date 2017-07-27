@@ -1,21 +1,18 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: Vladimir Palamarchuk
  * Date: 27.07.2017
- * Time: 12:16
+ * Time: 14:16
  */
-namespace Classes\cars;
-use Interfaces\cars\CarsInterface;
+
+namespace Classes\boats;
+use Interfaces\boats\BoatsInterface;
 use Interfaces\common\CommonInterface;
 use Classes\vehicle\Vehicle;
-/**
- * Class Cars
- * @package Classes\cars
- */
-class Cars extends Vehicle implements CarsInterface,CommonInterface
-{
+
+class Boat extends Vehicle implements CommonInterface,BoatsInterface {
+
     public function __construct($name)
     {
         parent::__construct($name);
@@ -26,9 +23,9 @@ class Cars extends Vehicle implements CarsInterface,CommonInterface
      */
     public function result_vehicle(){
         $this->move();
-        $this->musicOn();
+        $this->swim();
         $this->stop();
-        $this->refuel('gas');
+        $this->refuel('patrol');
     }
 
     /**
@@ -41,11 +38,11 @@ class Cars extends Vehicle implements CarsInterface,CommonInterface
     }
 
     /**
-     * Method musicOn
+     * Method swim
      * @return string
      */
-    public function musicOn()
+    public function swim()
     {
-        return $this->name . ' music switched on';
+        return $this->name . ' swimming';
     }
 }
