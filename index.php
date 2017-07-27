@@ -2,8 +2,6 @@
 /**
  * Created by PhpStorm.
  * User: Vladimir Palamarchuk
- * Date: 27.07.2017
- * Time: 13:07
  */
 
 use Classes\cars\Cars;
